@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="MoneyKeyPadTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="numbers">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginStart">1dp</item>
+        <item name="android:layout_marginEnd">1dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">1</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="layout_columnWeight">1</item>
+        <item name="layout_rowWeight">1</item>
+    </style>
+</resources>

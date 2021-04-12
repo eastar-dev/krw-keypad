@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c000" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#666"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="@id/numbers"
+            app:layout_constraintTop_toTopOf="@+id/barrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="close,editText" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="close"
+            android:scaleType="center"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:layout_constraintBottom_toTopOf="@+id/numbers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="58dp"
+            android:gravity="center"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:singleLine="true"
+            app:layout_constraintBottom_toBottomOf="@+id/close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/close"
+            app:layout_constraintTop_toTopOf="@+id/close"
+            tools:text="100,000원" />
+
+        <ImageView
+            android:id="@+id/clear"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="1dp"
+            android:scaleType="center"
+            android:src="@android:drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintTop_toTopOf="@+id/editText" />
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/numbers"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:padding="8dp"
+            app:columnCount="3"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                style="@style/numbers"
+                android:tag="1"
+                android:text="1" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="2"
+                android:text="2" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="3"
+                android:text="3" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="4"
+                android:text="4" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="5"
+                android:text="5" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="6"
+                android:text="6" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="7"
+                android:text="7" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="8"
+                android:text="8" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="9"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/delete"
+                style="@style/numbers"
+                android:tag="del"
+                android:text="del" />
+
+            <Button
+                style="@style/numbers"
+                android:tag="0"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/confirm"
+                style="@style/numbers"
+                android:text="@android:string/ok" />
+        </androidx.gridlayout.widget.GridLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupEditLayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="editText,clear"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
