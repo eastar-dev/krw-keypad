@@ -1,0 +1,3 @@
+include ':moneykeypad'
+include ':app'
+rootProject.name = "MoneyKeypadDemo"
